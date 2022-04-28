@@ -13,7 +13,13 @@
     </header>
     <main id="main">
       <div class="photograph-header">
+        <div>
+          <h1 id="photograph-header-title"></h1>
+          <h2 id="photograph-header-location"></h2>
+          <h3 id="photograph-header-tagline"></h3>
+        </div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <img id="photograph-header-img" src="" alt="" />
       </div>
     </main>
     <div id="contact_modal">
@@ -24,13 +30,20 @@
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="firstName">Prénom</label>
+						<input id="firstName" required minlength="3"/>
+            <label for="lastName">Nom</label>
+						<input id="lastName" required minlength="3"/>
+            <label for="email">Email</label>
+						<input id="email" type="email" required/>
+            <label for="yourMessage">Votre message</label>
+						<textarea id="yourMessage" required minlength="5"></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
   </body>
 </html>
