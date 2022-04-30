@@ -35,6 +35,64 @@
     color: #525252;
 }
 
+.photograph-creations {
+    display: grid;
+    grid-gap: 5vw;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    margin-top: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.photograph-creations article {
+    width: 100%;
+}
+.photograph-creations label {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+    margin-right: 25px
+}
+
+.photograph-creations img:not(.heart-img), .photograph-creations video {
+    width: 100%;
+    aspect-ratio: 350/300;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.photograph-creations .card-infos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.photograph-creations .card-infos .card-likes .heart-img {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+.photograph-creations .card-infos .card-likes span{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 31px;
+    text-align: right;
+    color: #911C1C;    
+}  
+.photograph-creations .card-infos .card-likes {
+    display: flex;
+    align-items: center;
+  }
+.photograph-creations .card-infos h3 {
+    font-size: 24px;
+    line-height: 31px;
+    color: #911C1C;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
 .contact_button {
     font-size: 20px;
     font-weight: bold;
