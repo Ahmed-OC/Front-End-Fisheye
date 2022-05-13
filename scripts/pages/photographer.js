@@ -3,6 +3,8 @@
 let params = (new URL(document.location)).searchParams;
 let photographerId = params.get('photographerId');
 let photographCreations = document.querySelector(".photograph-creations");
+let photographDetails = document.querySelector(".photograph-details");
+let likes = 0;
 
 
 async function fetchData(){
@@ -22,6 +24,8 @@ async function getMediasByPhotographerId(id,medias){
 async function displayData(photographer,medias){
     displayHeader(photographer)
     displayMedias(medias,photographer.name)
+    setTimeout(() => {})
+    displayPhotographDetails(photographer.price)
 }
 
 function displayHeader (photographer){
@@ -37,15 +41,30 @@ function displayHeader (photographer){
 }
 
 function displayMedias(medias,photographerName) {
-    likes=0
     medias.map(media => {
         const mediaModel = new photographerMediaFactory(media.video ? 'video': 'image' ,media,photographerName)
         const mediaCardDOM = mediaModel.getMediaCardDOM()
-        console.log(photographCreations)
         photographCreations.appendChild(mediaCardDOM)
         likes+= mediaModel.likes
     }
     )
+}
+
+// display photographers details in right bottom
+function displayPhotographDetails(price) {
+    const likeDetails = document.createElement('div')
+    likeDetails.classList.add('like-details')
+    const totalLikes = document.createElement('span')
+    const heart = document.createElement('img')
+    heart.setAttribute('alt','likes')
+    const pricing = document.createElement('span')
+    pricing.textContent = `${price}€/jour`
+    heart.setAttribute('src','assets/icons/black-heart.png')
+    totalLikes.textContent = likes
+    likeDetails.appendChild(totalLikes)
+    likeDetails.appendChild(heart)
+    photographDetails.appendChild(likeDetails)
+    photographDetails.appendChild(pricing)
 }
 
 
@@ -54,6 +73,8 @@ async function init() {
     const photographer = await getPhotographerById(photographerId,data.photographers)
     const medias = await getMediasByPhotographerId(photographerId,data.media)
     displayData( photographer,medias )
+    enableHeart()
+    initLightbox()
 }
 
 init()

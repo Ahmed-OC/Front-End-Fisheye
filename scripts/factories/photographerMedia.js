@@ -23,6 +23,7 @@ function photographerMediaImage(data,photographerName) {
         media.setAttribute('lang','en-US')
         const mediaLink = document.createElement( 'a' )
         mediaLink.href = mediaPicture
+        mediaLink.classList.add('index_modal')
         const h3 = document.createElement('h3')
         const likesNb = document.createElement( 'span' )
         const cardInfos = document.createElement('div')
@@ -42,6 +43,7 @@ function photographerMediaImage(data,photographerName) {
         cardInfos.appendChild(cardLikes)
         article.appendChild(mediaLink)
         article.appendChild(cardInfos);
+        
         return (article);
     }
     return { getMediaCardDOM, likes }
@@ -61,6 +63,7 @@ function photographerMediaVideo(data,photographerName) {
         media.setAttribute('lang','en-US')
         const mediaLink = document.createElement( 'a' )
         mediaLink.href = mediaVideo
+        mediaLink.classList.add('index_modal')
         const h3 = document.createElement('h3')
         const likesNb = document.createElement( 'span' )
         const cardInfos = document.createElement('div')
@@ -72,7 +75,7 @@ function photographerMediaVideo(data,photographerName) {
         heart.setAttribute('tabindex', 0)
         heart.classList.add('heart-img')
         cardInfos.classList.add('card-infos')
-        likesNb. textContent = likes
+        likesNb.textContent = likes
         h3.textContent = title
         mediaLink.appendChild(media)
         cardLikes.appendChild(likesNb)
