@@ -1,5 +1,5 @@
 
-
+// enable the increment and the decrement on a heart
 function enableHeart ()
 {
     var hearts = document.querySelectorAll(".heart-img");

@@ -77,3 +77,65 @@ h1 {
     color: #757575;
     line-height: 12px;
 }
+
+.order-by {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.order-by label{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    margin-right: 10px;
+}
+.order-by-buttons {
+    margin-bottom: -130px;
+    z-index: 1;
+    width: 170px;
+    height: 191px;
+}
+.order-by-buttons div{
+    width: 90%;
+    background-color: white;
+    height: 2px;
+    position: relative;
+    margin: -5px auto;
+}
+.order-by-buttons ul{
+    padding: 0%;
+}
+.order-by .first-button {
+    width: 170px;
+    height: 69px;
+    background-color: #911C1C;
+    border-radius: 5px;
+    border-style: solid;
+    border: 2px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.order-by .secondary-buttons {
+    width: 170px;
+    height: 69px;
+    background-color: #911C1C;
+    border-radius: 5px;
+    border-style: solid;
+    border: 2px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-top: 0px;
+}
+.order-by .clicked {
+    display: none;
+}

@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home Page"/></a>
     </header>
     <main id="main">
       <div class="photograph-header">
@@ -20,6 +20,23 @@
         </div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
         <img id="photograph-header-img" src="" alt="" />
+      </div>
+
+      <div class="order-by">
+        <label>Trier par</label>
+        <div class="order-by-buttons">
+          <button id='order-by' class="first-button" role="button" aria-haspopup="listbox" aria-expanded="true" aria-label="Trier par">
+            <span>Popularité</span>
+            <img src="assets/icons/down-chevron.png" class="not-clicked" alt="icon chevron down"/>
+            <img src="assets/icons/up-chevron.png" class="clicked" alt="icon chevron up"/>
+          </button>
+          <ul role="listbox" aria-activedescendant aria-selected="true" aria-labelledby="order-by">
+            <div class="clicked"></div>
+            <button role="option" class="secondary-buttons clicked">Date</button>
+            <div class="clicked"></div>
+            <button role="option" class="secondary-buttons clicked">Titre</button>
+          </ul>
+        </div>
       </div>
 
       <div class="photograph-creations"></div>
@@ -58,6 +75,7 @@
 			</div>
 		</div>
     <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/order_by.js"></script>
     <script src="scripts/utils/lightbox.js"></script>
     <script src="scripts/utils/likes.js"></script>
     <script src="scripts/pages/photographer.js"></script>
