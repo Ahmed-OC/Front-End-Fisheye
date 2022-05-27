@@ -4,6 +4,7 @@ let params = (new URL(document.location)).searchParams;
 let photographerId = params.get('photographerId');
 let photographCreations = document.querySelector(".photograph-creations");
 let photographDetails = document.querySelector(".photograph-details");
+let modal = document.getElementById("contact_modal");
 let likes = 0;
 
 
@@ -32,6 +33,8 @@ function displayHeader (photographer){
     const location = document.getElementById("photograph-header-location")
     const tagline = document.getElementById("photograph-header-tagline")
     const profil_img = document.getElementById("photograph-header-img")
+    const contact = document.getElementById("contact-name")
+    contact.textContent = `Contactez-moi ${photographer.name}`
     title.textContent = photographer.name
     location.textContent = `${photographer.city}, ${photographer.country}`;
     tagline.textContent = photographer.tagline

@@ -137,11 +137,13 @@
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
+    overflow-y: scroll;
+    overflow-y: scroll;
+    position: fixed;
+    top: 5vh;
+    max-height: 80Vh;
+    left: 20VW;
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     padding: 35px;
     margin: auto;
 }
@@ -153,6 +155,9 @@
 
 .modal header img {
     cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 30px;
 }
 
 .modal header h2 {
@@ -183,7 +188,7 @@ form div {
 
 form input {
     width: 100%;
-    height: 68px;
+    height: 8vh;
     border: none;
     border-radius: 5px;
 }
@@ -233,14 +238,19 @@ form input {
     aspect-ratio: 1.2;
 }
 #lightbox_modal .lightbox .close{
+    cursor: pointer;
     width: 42px;
     height: 42px;
+    position: absolute;
+    top: 20px;
 }
-.lightbox .lightbox-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 450px;
-    margin-bottom: auto;
+.lightbox > a, .lightbox-right a img
+{
+    cursor: pointer;
+}
+.lightbox-right > img
+{
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
 }
