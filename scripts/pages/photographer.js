@@ -1,9 +1,11 @@
+/* eslint-disable no-undef */
 //Mettre le code JavaScript lié à la page photographer.html 
 
 let params = (new URL(document.location)).searchParams;
 let photographerId = params.get('photographerId');
 let photographCreations = document.querySelector(".photograph-creations");
 let photographDetails = document.querySelector(".photograph-details");
+// eslint-disable-next-line no-unused-vars
 let modal = document.getElementById("contact_modal");
 let likes = 0;
 
@@ -34,7 +36,7 @@ function displayHeader (photographer){
     const tagline = document.getElementById("photograph-header-tagline")
     const profil_img = document.getElementById("photograph-header-img")
     const contact = document.getElementById("contact-name")
-    contact.textContent = `Contactez-moi ${photographer.name}`
+    contact.innerHTML = `Contactez-moi <br> ${photographer.name}`
     title.textContent = photographer.name
     location.textContent = `${photographer.city}, ${photographer.country}`;
     tagline.textContent = photographer.tagline
@@ -49,7 +51,7 @@ function displayMedias(medias,photographerName,filter) {
     else medias.sort((a, b) => parseFloat(b.likes) - parseFloat(a.likes));
 
 
-    medias.map(media => {
+    medias.forEach(media => {
         const mediaModel = new photographerMediaFactory(media.video ? 'video': 'image' ,media,photographerName)
         const mediaCardDOM = mediaModel.getMediaCardDOM()
         photographCreations.appendChild(mediaCardDOM)

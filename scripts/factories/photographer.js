@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 class photographerFactory {
     constructor(type, data){
         switch(type){

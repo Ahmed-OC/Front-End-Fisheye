@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 let links = [];
 let indexModal = 0;
 const lightbox = document.getElementById('lightbox_modal')
@@ -56,12 +57,10 @@ function closeLightbox() {
     lightboxContent.innerHTML = ''
 }
 function next() { 
-    const media = lightboxContent.firstChild
     indexModal===links.length-1 ? indexModal=0 : indexModal++
     displayContent()
 }
 function prev() { 
-    const media = lightboxContent.firstChild
     indexModal===0 ? indexModal=links.length-1 : indexModal--
     displayContent()
 }

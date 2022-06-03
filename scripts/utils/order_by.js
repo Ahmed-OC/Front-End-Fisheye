@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const orderByButton = document.getElementById("order-by")
 const secondaryFilterButtons = document.querySelectorAll(".order-by-buttons ul button")
 
@@ -21,7 +22,6 @@ function clickOrderBy() {
 // handle the click on a different filter
 async function secondaryButtonsClick(e) {
 
-  const actualName = document.getElementById("photograph-header-title")  
   const actualButtonText = e.textContent
   const filter = document.querySelectorAll(".order-by-buttons button span")
   const actualFilterText = filter[0].textContent

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 class photographerMediaFactory {
     constructor(type, data, photographerName){
         switch(type){
@@ -23,7 +24,6 @@ function photographerMediaImage(data,photographerName) {
         media.setAttribute('lang','en-US')
         const mediaLink = document.createElement( 'a' )
         mediaLink.href = mediaPicture
-        mediaLink.classList.add('index_modal')
         const h3 = document.createElement('h3')
         const likesNb = document.createElement( 'span' )
         const cardInfos = document.createElement('div')
@@ -32,6 +32,7 @@ function photographerMediaImage(data,photographerName) {
         const heart = document.createElement('img')
         heart.setAttribute('src','assets/icons/heart.png')
         heart.setAttribute('alt','likes')
+        heart.setAttribute('tabindex', 0)
         heart.classList.add('heart-img')
         cardInfos.classList.add('card-infos')
         likesNb.textContent = likes
@@ -63,7 +64,6 @@ function photographerMediaVideo(data,photographerName) {
         media.setAttribute('lang','en-US')
         const mediaLink = document.createElement( 'a' )
         mediaLink.href = mediaVideo
-        mediaLink.classList.add('index_modal')
         const h3 = document.createElement('h3')
         const likesNb = document.createElement( 'span' )
         const cardInfos = document.createElement('div')
